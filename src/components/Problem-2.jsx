@@ -14,8 +14,6 @@ const Problem2 = () => {
   const [selectedContact, setSelectedContact] = useState(null);
 
   useEffect(() => {
-    // Fetch contacts from API for Modal A
-    // Mock data for demonstration
     setContactsA([
       {
         id: 1,
@@ -63,8 +61,6 @@ const Problem2 = () => {
   }, []);
 
   useEffect(() => {
-    // Fetch contacts from API for Modal B
-    // Mock data for demonstration
     setContactsB([
       {
         id: 1,
@@ -136,7 +132,6 @@ const Problem2 = () => {
   };
 
   useEffect(() => {
-    // Filter contacts for Modal A
     const filteredA = contactsA.filter((contact) => {
       if (onlyEven && contact.id % 2 !== 0) {
         return false;
@@ -147,7 +142,6 @@ const Problem2 = () => {
   }, [contactsA, onlyEven, searchTermA]);
 
   useEffect(() => {
-    // Filter contacts for Modal B
     const filteredB = contactsB.filter((contact) => {
       if (onlyEven && contact.id % 2 !== 0) {
         return false;
@@ -179,7 +173,6 @@ const Problem2 = () => {
         </div>
       </div>
 
-      {/* Modals */}
       {showModalA && (
         <div
           className="modal"
@@ -198,7 +191,6 @@ const Problem2 = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                {/* Contacts list */}
                 {filteredContactsA.map((contact) => (
                   <div
                     key={contact.id}
@@ -266,7 +258,6 @@ const Problem2 = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                {/* Contacts list */}
                 {filteredContactsB.map((contact) => (
                   <div
                     key={contact.id}
@@ -334,14 +325,12 @@ const Problem2 = () => {
                 ></button>
               </div>
               <div className="modal-body">
-                {/* Contact details */}
                 {selectedContact && (
                   <div>
                     <p>Name: {selectedContact.name}</p>
                     <p>Country: {selectedContact.country}</p>
                     <p>Email: {selectedContact.email}</p>
                     <p>Phone: {selectedContact.phone}</p>
-                    {/* Add more contact details here */}
                   </div>
                 )}
               </div>
